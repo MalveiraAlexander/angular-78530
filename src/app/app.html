@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="row justify-content-between">
+    <div class="col-auto">
+      <h1>Agregar Estudiante</h1>
+    </div>
+  </div>
+  <form class="row mt-3" (submit)="save($event)" novalidate="novalidate">
+    <div class="col-12 col-md-6 mb-3">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input
+        type="text"
+        [field]="form.firstName"
+        class="form-control"
+        id="firstName"
+        placeholder="Ingrese el nombre"
+      />
+      @if (form.firstName().invalid() && (form.firstName().touched() || form.firstName().dirty())) {
+        @for (error of form.firstName().errors(); track $index) {
+          <small class="text-danger">{{error.message}}</small><br>
+        }
+      }
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input
+        type="text"
+        [field]="form.lastName"
+        class="form-control"
+        id="lastName"
+        placeholder="Ingrese el apellido"
+      />
+      @if (form.lastName().invalid() && (form.lastName().touched() || form.lastName().dirty())) {
+        @for (error of form.lastName().errors(); track $index) {
+          <small class="text-danger">{{error.message}}</small><br>
+        }
+      }
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input
+        type="email"
+        [field]="form.email"
+        class="form-control"
+        id="email"
+        placeholder="Ingrese el correo electrónico"
+      />
+      @if (form.email().invalid() && (form.email().touched() || form.email().dirty())) {
+        @for (error of form.email().errors(); track $index) {
+          <small class="text-danger">{{error.message}}</small><br>
+        }
+      }
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="phone" class="form-label">Teléfono</label>
+      <input
+        type="tel"
+        [field]="form.phone"
+        class="form-control"
+        id="phone"
+        placeholder="Ingrese el teléfono"
+      />
+      @if (form.phone().invalid() && (form.phone().touched() || form.phone().dirty())) {
+        @for (error of form.phone().errors(); track $index) {
+          <small class="text-danger">{{error.message}}</small><br>
+        }
+      }
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="age" class="form-label">Edad</label>
+      <input
+        type="number"
+        [field]="form.age"
+        class="form-control"
+        id="age"
+        placeholder="Ingrese la edad"
+      />
+      @if (form.age().invalid() && (form.age().touched() || form.age().dirty())) {
+        @for (error of form.age().errors(); track $index) {
+          <small class="text-danger">{{error.message}}</small><br>
+        }
+      }
+    </div>
+    <div class="col-12 mb-3">
+      <button type="submit" [disabled]="form().invalid()" class="btn btn-primary me-2">
+        <i class="fa-duotone fa-light fa-floppy-disk"></i> Guardar
+      </button>
+    </div>
+  </form>
+</div>
