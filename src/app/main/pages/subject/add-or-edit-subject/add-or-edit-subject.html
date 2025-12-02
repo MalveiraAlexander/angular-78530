@@ -1,0 +1,112 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Registrar Materia</h3>
+    </div>
+    <div class="card-body">
+      <form #subjectForm="ngForm" novalidate (ngSubmit)="save(subjectForm.form)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input
+            type="text"
+            [(ngModel)]="subject.name"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <validation
+            [control]="subjectForm.control.get('name')!"
+            name="Nombre"
+            id="name"
+          ></validation>
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Categoría</label>
+          <select
+            class="form-select"
+            id="category"
+            name="category"
+            required
+            [(ngModel)]="subject.category"
+          >
+            <option value="" disabled selected>Seleccione una categoría</option>
+            <option value="Exactas">Exactas</option>
+            <option value="Químicas">Químicas</option>
+            <option value="Humanidades">Humanidades</option>
+            <option value="Sociales">Sociales</option>
+            <option value="Medicina">Medicina</option>
+          </select>
+          <validation
+            [control]="subjectForm.control.get('category')!"
+            name="Categoría"
+            id="category"
+          ></validation>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Horario de dictado</label>
+          <div class="row g-2">
+            <div class="col-md-4">
+              <select
+                class="form-select"
+                name="scheduleDay"
+                required
+                [(ngModel)]="subject.scheduleDay"
+              >
+                <option value="" disabled selected>Día</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miércoles">Miércoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+              </select>
+              <validation
+                [control]="subjectForm.control.get('scheduleDay')!"
+                name="Día"
+                id="scheduleDay"
+              ></validation>
+            </div>
+            <div class="col-md-4">
+              <input
+                type="time"
+                class="form-control"
+                name="scheduleTimeFrom"
+                required
+                min="00:00"
+                max="23:59"
+                [(ngModel)]="subject.scheduleTimeFrom"
+              />
+              <validation
+                [control]="subjectForm.control.get('scheduleTimeFrom')!"
+                name="Hora inicio"
+                id="scheduleTimeFrom"
+              ></validation>
+            </div>
+            <div class="col-md-4">
+              <input
+                type="time"
+                class="form-control"
+                name="scheduleTimeTo"
+                required
+                min="07:00"
+                max="23:00"
+                [(ngModel)]="subject.scheduleTimeTo"
+              />
+              <validation
+                [control]="subjectForm.control.get('scheduleTimeTo')!"
+                name="Hora fin"
+                id="scheduleTimeTo"
+              ></validation>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="subjectForm.form.invalid" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+@if (control().invalid && (control().dirty || control().touched)) {
+  @if (control().errors!['required']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} es requerido.</small>
+  }
+  @if(control().errors!['minlength']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} necesita al menos {{control()!.errors!['minlength'].requiredLength}} caracteres.</small>
+  }
+  @if(control().errors!['maxlength']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} no de contener más de {{control()!.errors!['maxlength'].requiredLength}} caracteres. (Tienes {{control()!.errors!['maxlength'].actualLength}})</small>
+  }
+  @if(control().errors!['email']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} no es un correo válido.</small>
+  }
+  @if(control().errors!['min']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} es menor a {{control()!.errors!['min'].min}}.</small>
+  }
+  @if(control().errors!['max']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} es mayor a {{control()!.errors!['max'].max}}.</small>
+  }
+  @if(control().errors!['pattern']) {
+    <small [id]="id()+'error'" class="text-error-custom">{{name()}} tiene un formato incorrecto.</small>
+  }
+}

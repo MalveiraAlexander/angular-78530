@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row justify-content-between">
+    <div class="col-auto">
+      <h1>Agregar Estudiante</h1>
+    </div>
+  </div>
+  <form [formGroup]="form()" (ngSubmit)="onSubmit()" class="row mt-3">
+    <div class="col-12 col-md-6 mb-3">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input
+        formControlName="firstName"
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Ingrese el nombre"
+      />
+      <validation [control]="form().controls['firstName']" name="Nombre" id="firstName" />
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input
+        formControlName="lastName"
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Ingrese el apellido"
+      />
+      <validation [control]="form().controls['lastName']" name="Apellido" id="lastName" />
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Ingrese el correo electrónico"
+      />
+      <validation [control]="form().controls['email']" name="Correo Electrónico" id="email" />
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="phone" class="form-label">Teléfono</label>
+      <input
+        formControlName="phone"
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="Ingrese el teléfono"
+      />
+      <validation [control]="form().controls['phone']" name="Teléfono" id="phone" />
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="age" class="form-label">Edad</label>
+      <input
+        formControlName="age"
+        type="number"
+        class="form-control"
+        id="age"
+        placeholder="Ingrese la edad"
+      />
+      <validation [control]="form().controls['age']" name="Edad" id="age" />
+    </div>
+    <div class="col-12 mb-3">
+      <button type="submit" class="btn btn-primary me-2" [disabled]="form().invalid">
+        <i class="fa-duotone fa-light fa-floppy-disk"></i> Guardar
+      </button>
+      <button type="button" class="btn btn-secondary" routerLink="/s/students">
+        <i class="fa-duotone fa-light fa-xmark"></i> Cancelar
+      </button>
+    </div>
+  </form>
+</div>
+<p>
+  {{ searchService.query() }}
+</p>

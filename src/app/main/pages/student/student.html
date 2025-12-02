@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row justify-content-between">
+        <div class="col-auto">
+            <h1>Estudiantes</h1>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-success" routerLink="add"><i class="fa-duotone fa-light fa-user-plus"></i> Nuevo</button>
+        </div>
+    </div>
+    <div class="row">
+        <p>
+            {{searchService.query()}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="navbar fixed-top w-100 navbar-expand-lg shadow-nav" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/s">Administrador de Estudiantes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <ul class="navbar-nav">
+        @for (item of menuItems(); track $index) {
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="item.routerLink"><i [class]="item.icon"></i> {{item.label}}</a>
+            </li>
+        }
+      </ul>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+            <input type="search" [(ngModel)]="searchService.query" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid margin-top-nav">
+    <ng-content></ng-content>
+</div>
