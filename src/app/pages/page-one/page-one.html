@@ -1,0 +1,27 @@
+<app-prueba></app-prueba>
+<h1>{{ title() }}</h1>
+<h2>{{ count() }}</h2>
+
+@if (count() > 20) {
+    <h1>El numero es mayor a 20!</h1>
+} @else {
+    <h1>No es mayor a 20!</h1>
+}
+
+@switch (count()) {
+    @case (1) {
+        <p>Es uno!</p>
+    }
+    @case (10) {
+        <p>Es diez!</p>
+    }
+    @default {
+        <p>Es cualquier número!</p>
+    }
+}
+
+@for (item of numbers(); track $index) {
+    <p>El numero es {{item}}</p>
+}
+
+<button (click)="onCount()" class="btn btn-danger">Sumar</button>
