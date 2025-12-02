@@ -1,0 +1,25 @@
+<app-prueba></app-prueba>
+<h1>{{ title }}</h1>
+<h2>{{ count }}</h2>
+
+<div *ngIf="count > 20; else noMayor">
+  <h1>El numero es mayor a 20!</h1>
+</div>
+
+<ng-template #noMayor>
+  <div>
+    <h1>No es mayor a 20!</h1>
+  </div>
+</ng-template>
+
+<div [ngSwitch]="count">
+  <p *ngSwitchCase="1">Es uno!</p>
+  <p *ngSwitchCase="10">Es diez!</p>
+  <p *ngSwitchDefault>Es cualquier número!</p>
+</div>
+
+<div *ngFor="let item of numbers; let i = index">
+  <p>El numero es {{item}}</p>
+</div>
+
+<button (click)="onCount()">Sumar</button>
