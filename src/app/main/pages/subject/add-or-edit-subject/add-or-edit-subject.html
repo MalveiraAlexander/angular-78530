@@ -1,9 +1,22 @@
 <div class="container mt-4">
   <div class="card">
     <div class="card-header bg-primary text-white">
-      <h3 class="mb-0">Registrar Materia</h3>
+      @if(id()) {
+        <h3 class="mb-0">Editar Materia</h3>
+      } @else {
+        <h3 class="mb-0">Registrar Materia</h3>
+      }
     </div>
-    <div class="card-body">
+    @if(loading()) {
+      <div class="card-body">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="card-body">
       <form #subjectForm="ngForm" novalidate (ngSubmit)="save(subjectForm.form)">
         <div class="mb-3">
           <label for="name" class="form-label">Nombre</label>
@@ -108,5 +121,7 @@
         <button type="submit" [disabled]="subjectForm.form.invalid" class="btn btn-primary">Guardar</button>
       </form>
     </div>
+    }
+    
   </div>
 </div>

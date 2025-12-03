@@ -1,24 +1,50 @@
 {
-    "students" : [
-        {
-            "id": 1,
-            "firstName":"Test",
-            "lastName": "Test",
-            "email": "Test",
-            "phone": "test"
-        },
-        {
-            "id": 2,
-            "firstName":"Test2",
-            "lastName": "Test2",
-            "email": "Test2",
-            "phone": "test2"
-        }
-    ],
-    "subjects": [
-        {
-            "name": "Test",
-            "description": "test"
-        }
-    ]
+  "students": [
+    {
+      "id": "1",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "Test",
+      "phone": "test",
+      "subjectIds": [
+        1
+      ]
+    },
+    {
+      "id": "2",
+      "firstName": "Test2",
+      "lastName": "Test2",
+      "email": "Test2",
+      "phone": "test2",
+      "subjectIds": [
+        1
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Matemáticas",
+      "category": "Exactas",
+      "scheduleDay": "Viernes",
+      "scheduleTimeFrom": "20:00",
+      "scheduleTimeTo": "23:00",
+      "id": "ffae"
+    },
+    {
+      "id": "05fa",
+      "name": "Angular",
+      "category": "Exactas",
+      "scheduleDay": "Martes",
+      "scheduleTimeFrom": "19:00",
+      "scheduleTimeTo": "21:00"
+    },
+    {
+      "name": "Algo2",
+      "category": "Humanidades",
+      "scheduleDay": "Martes",
+      "scheduleTimeFrom": "20:00",
+      "scheduleTimeTo": "00:00",
+      "id": "54ec"
+    }
+  ]
 }

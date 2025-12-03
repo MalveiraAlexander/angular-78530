@@ -27,6 +27,14 @@ export const routesMain: Routes = [
           ),
         title: 'Administrador - Agregar Materia',
       },
+      {
+        path: 'edit/:id',
+        loadComponent: () =>
+          import('./pages/subject/add-or-edit-subject/add-or-edit-subject').then(
+            (m) => m.AddOrEditSubject
+          ),
+        title: 'Administrador - Editar Materia',
+      },
       { path: '', loadComponent: () => Subject, title: 'Administrador - Materias' },
     ],
   },

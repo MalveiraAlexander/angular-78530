@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { Validation } from '../shared/components/validation/validation';
 import { AddOrEditStudent } from '../main/pages/student/add-or-edit-student/add-or-edit-student';
 import { StudentService } from '../main/services/student/student';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,7 +16,8 @@ import { StudentService } from '../main/services/student/student';
   imports: [
     RouterLink,
     ReactiveFormsModule,
-    Validation
+    Validation,
+    HttpClientModule
   ],
   providers: [StudentService]
 })
