@@ -73,7 +73,7 @@
   <div class="row">
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
+        <li class="page-item" [class.disabled]="page() == 0">
           <a class="page-link" (click)="previousPage()">Anterior</a>
         </li>
         @for (item of totalItems(); track $index) {
