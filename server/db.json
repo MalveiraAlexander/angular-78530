@@ -28,6 +28,7 @@
       "scheduleDay": "Viernes",
       "scheduleTimeFrom": "20:00",
       "scheduleTimeTo": "23:00",
+      "prueba": "valor agregado por el interceptor",
       "id": "ffae"
     },
     {
@@ -45,6 +46,22 @@
       "scheduleTimeFrom": "20:00",
       "scheduleTimeTo": "00:00",
       "id": "54ec"
+    },
+    {
+      "name": "Test",
+      "category": "Humanidades",
+      "scheduleDay": "Miércoles",
+      "scheduleTimeFrom": "10:10",
+      "scheduleTimeTo": "10:10",
+      "id": "E4ZYihT"
+    },
+    {
+      "name": "Química",
+      "category": "Químicas",
+      "scheduleDay": "Lunes",
+      "scheduleTimeFrom": "17:00",
+      "scheduleTimeTo": "19:00",
+      "id": "CITYXwa"
     }
   ]
 }

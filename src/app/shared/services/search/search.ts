@@ -4,5 +4,5 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class Search {
-  query = signal<string>('Pepe');
+  query = signal<string | undefined>(undefined);
 }

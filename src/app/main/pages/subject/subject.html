@@ -22,7 +22,8 @@
       </div>
     </div>
   </div>
-  } @else { @if(subjectService.subjects.error()) {
+  } @else {
+    @if(subjectService.subjects.error()) {
   <div class="alert alert-danger" role="alert">
     Ocurrió un error al cargar las materias. Por favor, inténtelo de nuevo más tarde. ERROR:
     {{ subjectService.subjects.error()?.message }}
@@ -41,7 +42,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (item of subjectService.subjects.value(); track $index) {
+        @for (item of subjects(); track $index) {
         <tr>
           <td>{{ item.name }}</td>
           <td>{{ item.category }}</td>
@@ -68,6 +69,21 @@
         }
       </tbody>
     </table>
+  </div>
+  <div class="row">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" (click)="previousPage()">Anterior</a>
+        </li>
+        @for (item of totalItems(); track $index) {
+          <li class="page-item" style="cursor: pointer;" (click)="onPageChange($index)" [class]="$index == page() ? 'active': ''"><a class="page-link" >{{ $index + 1 }}</a></li>
+        }
+        <li class="page-item">
+          <a class="page-link" (click)="nextPage()">Siguiente</a>
+        </li>
+      </ul>
+    </nav>
   </div>
   } }
 </div>
